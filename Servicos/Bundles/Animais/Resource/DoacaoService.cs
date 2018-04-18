@@ -28,23 +28,38 @@ namespace Servicos.Bundles.Animais.Resource
             switch(doacao.Status)
             {
                 case "CANCELADO":
-                    string mensagem = string.Concat(
-                        "A doação do ",
+                    var emails = _repository
+                            .GetAll<SolicitacaoAdocao>()
+                            .Where(s => s.Doacao.Id == doacao.Id)
+                            .Select(s => s.Usuario.Email);
+                    EnviarNotificacaoCancelamento(doacao, emails);
+                break;
+                case "FINALIZADO":
+                break;
+            }
+        }
+
+        private void EnviarNotificacaoCancelamento(Doacao doacao, IEnumerable<string> emails)
+        {
+            string mensagem = string.Concat(
+                        "A doação do(a) ",
                         doacao.Animal.Especie,
                         " ",
                         doacao.Animal.Nome,
                         " acaba de ser cancelada por seu responsável."
                     );
-                    var emails = _repository
-                                    .GetAll<SolicitacaoAdocao>()
-                                    .Where(s => s.Doacao.Id == doacao.Id)
-                                    .Select(s => s.Usuario.Email);
-                    foreach (string email in emails)
-                        EnviadorEmail.Enviar(email, "Doação Cancelada.", mensagem);
-                break;
-                case "FINALIZADO":
-                break;
-            }
+            EnviadorEmail.EnviarMultiplos(emails, "Doação Cancelada.", mensagem);
+        }
+
+        private void EnviarNotificacaoNaoElegidos(Doacao doacao, IEnumerable<string> emails)
+        {
+            string mensagem = string.Concat(
+                        "Você não foi escolhido para adotar o(a)",
+                        doacao.Animal.Especie,
+                        " ",
+                        doacao.Animal.Nome
+                    );
+            EnviadorEmail.EnviarMultiplos(emails, "Doação Finalizada.", mensagem);
         }
     }
 }

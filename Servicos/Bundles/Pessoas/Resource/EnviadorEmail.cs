@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Mail;
 
 namespace Servicos.Bundles
@@ -35,6 +36,12 @@ namespace Servicos.Bundles
             {
                 throw e;
             }
+        }
+
+        public static void EnviarMultiplos(IEnumerable<string> emails, string titulo, string mensagem)
+        {
+            foreach (string email in emails)
+                Enviar(email, titulo, mensagem);
         }
     }
 }
