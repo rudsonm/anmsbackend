@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Mesa";
+}
+
+<div data-ng-controller="MesaController as mesaVm">
+    <div data-ng-if="!mesaVm.editando">
+        @Html.Partial("~/Views/Mesa/Components/Lista.cshtml")
+    </div>
+
+    <div data-ng-if="mesaVm.editando">
+        @Html.Partial("~/Views/Mesa/Components/Cadastro.cshtml")
+    </div>
+
+    <md-button class="md-fab md-secondary btn-add"
+               data-ng-click="mesaVm.irParaFormulario()"
+               data-ng-if="!mesaVm.editando"
+               aria-label="Cadastrar">
+        <md-icon>add</md-icon>
+    </md-button>
+</div>

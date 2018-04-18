@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Usuário";
+}
+<md-card layout="column" flex-offset="30" flex="40" 
+         data-ng-controller="UsuarioController as usuarioVm"
+         style="margin-top: 10%">
+    <md-toolbar class="md-accent tiny">
+        <h2 class="md-toolbar-tools">
+            <span>Login</span>
+        </h2>
+    </md-toolbar>
+    <md-card-content class="md-no-momentum">
+        <form name="usuarioForm">
+            <div layout="column">
+                <md-input-container class="md-icon-left">
+                    <md-icon>person</md-icon>
+                    <input type="text" name="Nome" placeholder="Nome" data-ng-model="usuarioVm.usuario.CpfCnpj" />
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>vpn_key</md-icon>
+                    <input type="password" placeholder="Senha" data-ng-model="usuarioVm.usuario.Senha" data-ng-enter="usuarioVm.autenticar(usuarioVm.usuario)" />
+                </md-input-container>
+            </div>
+        </form>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button data-ng-click="usuarioVm.autenticar(usuarioVm.usuario)">Entrar</md-button>
+    </md-card-actions>
+</md-card>
+
+<md-button class="md-fab md-secondary btn-add" ng-href="/Usuario/Cadastro" aria-label="Cadastrar">
+    <md-icon>add</md-icon>
+</md-button>

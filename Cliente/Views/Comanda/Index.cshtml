@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Comanda";
+}
+
+<div data-ng-controller="ComandaController as comandaVm">
+    <div data-ng-if="!comandaVm.editando">
+        @Html.Partial("~/Views/Comanda/Components/Lista.cshtml")
+    </div>
+
+    <div data-ng-if="comandaVm.editando">
+        @Html.Partial("~/Views/Comanda/Components/Cadastro.cshtml")
+    </div>
+
+    <md-button class="md-fab md-secondary btn-add"
+               ng-click="comandaVm.editando = true"
+               data-ng-if="!comandaVm.editando"
+               aria-label="Cadastrar">
+        <md-icon>add</md-icon>
+    </md-button>
+</div>

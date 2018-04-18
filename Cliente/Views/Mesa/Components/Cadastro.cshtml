@@ -1,0 +1,26 @@
+﻿<md-card layout="column">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Cadastro</span>
+            <small>Campos marcados com * são obrigatórios</small>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content class="md-no-momentum">
+        <form>
+            <div layout="row">
+                <md-input-container class="md-icon-left" flex="20">
+                    <md-icon>find_replace</md-icon>
+                    <input type="number" placeholder="Número" min="0" data-ng-model="mesaVm.mesa.Numero" required />
+                </md-input-container>
+                <md-input-container class="md-icon-left" flex="80">
+                    <md-icon>find_replace</md-icon>
+                    <input type="text" placeholder="Observação" data-ng-model="mesaVm.mesa.Observacao" />
+                </md-input-container>
+            </div>
+        </form>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button data-ng-click="mesaVm.editando = false">Cancelar</md-button>
+        <md-button data-ng-click="mesaVm.salvar(mesaVm.mesa)">Salvar</md-button>
+    </md-card-actions>
+</md-card>

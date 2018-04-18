@@ -1,0 +1,29 @@
+﻿<md-card layout="column">
+    <md-card-title class="md-accent">
+        <md-card-title-text>
+            <span class="md-headline">Cadastro</span>
+            <small>Campos marcados com * são obrigatórios</small>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content class="md-no-momentum">
+        <form>
+            <div layout="row">
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>person</md-icon>
+                    <input type="text" name="Nome" placeholder="Nome" data-ng-model="categoriaVm.categoria.Nome" required />
+                </md-input-container>
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>find_replace</md-icon>
+                    <md-select placeholder="Tipo" data-ng-model="categoriaVm.categoria.Tipo" required>
+                        <md-option value="PRODUTO">Produto</md-option>
+                        <md-option value="FORNECEDOR">Fornecedor</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </form>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button data-ng-click="categoriaVm.editando = false">Cancelar</md-button>
+        <md-button data-ng-click="categoriaVm.salvar(categoriaVm.categoria)">Salvar</md-button>
+    </md-card-actions>
+</md-card>

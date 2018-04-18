@@ -1,0 +1,37 @@
+﻿<md-card>
+    <md-table-content>
+        <table md-table>
+            <thead md-head>
+                <tr md-row>
+                    <th md-column>Status</th>
+                    <th md-column>Número</th>
+                    <th md-column>Observação</th>
+                    <th md-column>Comandas</th>
+                    <th md-column>Ações</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr data-ng-repeat="mesa in mesaVm.mesas" md-row>
+                    <td md-cell class="mesa" data-ng-class="{'ocupado': mesa.Ocupado, 'livre': !mesa.Ocupado}"></td>
+                    <td md-cell>{{mesa.Numero}}</td>
+                    <td md-cell>{{mesa.Observacao}}</td>
+                    <td md-cell>{{mesa.Comandas.length}}</td>
+                    <td md-cell layout-align="end center">
+                        <md-icon class="blue"
+                                 data-ng-click="mesaVm.irParaFormulario(mesa)"
+                                 data-ng-tooltip="Editar"
+                                 data-ng-direction="left">
+                            edit
+                        </md-icon>
+                        <md-icon class="red"
+                                 data-ng-click="mesaVm.remover(mesa.Id)"
+                                 data-ng-tooltip="Remover"
+                                 data-ng-direction="right">
+                            delete
+                        </md-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-content>
+</md-card>

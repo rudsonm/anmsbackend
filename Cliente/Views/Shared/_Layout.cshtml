@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Projeto ASP.NET</title>
+    <link rel="stylesheet" href="~/Vendors/angular-material/angular-material.min.css" />
+    <link rel="stylesheet" href="~/Vendors/angular-material/md-data-table.min.css" />
+    <link rel="stylesheet" href="~/Vendors/material-icons/material-icons.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <script type="text/javascript" src="~/Vendors/Vendors.js"></script>
+    <script type="text/javascript" src="~/Scripts/App.js"></script>
+</head>
+<body data-ng-app="Module" 
+      data-ng-controller="MainController as mainVm" 
+      data-md-theme data-layout="row">
+    @Html.Partial("~/Views/Shared/Partials/Sidenav.cshtml")
+    <md-content flex>
+        @Html.Partial("~/Views/Shared/Partials/Toolbar.cshtml")
+        @Html.Partial("~/Views/Shared/Partials/ProgressCircle.cshtml")
+        @RenderBody()
+    </md-content>
+</body>
+</html>

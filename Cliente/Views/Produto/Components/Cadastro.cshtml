@@ -1,0 +1,48 @@
+﻿<md-card layout="column">
+    <md-card-title class="md-accent">
+        <md-card-title-text>
+            <span class="md-headline">Cadastro</span>
+            <small>Campos marcados com * são obrigatórios</small>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content class="md-no-momentum">
+        <form>
+            <div layout="column">
+                <md-input-container class="md-icon-left">
+                    <md-icon>person</md-icon>
+                    <input type="text" name="Nome" placeholder="Nome" data-ng-model="produtoVm.produto.Nome" required />
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>label</md-icon>
+                    <md-select placeholder="Categoria" data-ng-model="produtoVm.produto.Categoria" required>
+                        <md-option data-ng-repeat="categoria in produtoVm.categorias" 
+                                   data-ng-selected="categoria.Id === produtoVm.produto.Categoria.Id"
+                                   data-ng-value="categoria">{{categoria.Nome}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>attach_money</md-icon>
+                    <input type="text" placeholder="Preço" min="0" step="any" data-ng-model="produtoVm.produto.Preco" data-ng-mask="money" />
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container class="md-icon-left" flex="50">
+                    <md-icon>timer</md-icon>
+                    <input type="text" placeholder="Tempo Estimado" data-ng-model="produtoVm.produto.TempoEstimado" data-ng-mask="time" />
+                </md-input-container>
+                <md-switch data-ng-model="produtoVm.Manufaturado" 
+                           data-ng-true-value="true" 
+                           data-ng-false-value="false" 
+                           class="md-secondary">
+                    Manufaturado
+                </md-switch>
+            </div>
+        </form>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button data-ng-click="produtoVm.editando = false">Cancelar</md-button>
+        <md-button data-ng-click="produtoVm.salvar(produtoVm.produto)">Salvar</md-button>
+    </md-card-actions>
+</md-card>

@@ -1,0 +1,77 @@
+﻿<md-dialog aria-label="Consumos">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2 flex>#{{consumoVm.comanda.Codigo}} Consumos</h2>
+                <md-button class="md-icon-button" data-ng-click="consumoVm.fechar()" layout-align="end center">
+                    <md-icon aria-label="Fechar">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content style="height: 20rem; width: 50rem">
+            <md-table-container>
+                <table md-table>
+                    <thead md-head>
+                        <tr md-row>
+                            <th md-column>Código</th>
+                            <th md-column>Produto</th>
+                            <th md-column>Categoria</th>
+                            <th md-column>Adicionais</th>
+                            <th md-column>Preço</th>
+                            <th md-column>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody md-body>
+                        <tr md-row data-ng-repeat="consumos in consumoVm.grupoConsumos">
+                            <td md-cell>#{{consumos[0].Produto.Codigo}}</td>
+                            <td md-cell>{{consumos[0].Produto.Nome}}</td>
+                            <td md-cell>{{consumos[0].Produto.Categoria.Nome}}</td>
+                            <td md-cell data-ng-bind="consumoVm.obterTotalAdicionais(consumos)"></td>
+                            <td md-cell data-ng-bind="consumoVm.obterPrecoTotal(consumos) | currency: 'R$ '"></td>
+                            <td md-cell layout="row" layout-align="end center">
+                                <md-icon class="icon">remove</md-icon>
+                                <span>{{consumos.length}}</span>
+                                <md-icon class="icon">add</md-icon>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-sidenav class="md-sidenav-right md-whiteframe-4dp" layout="column" md-component-id="consumo-sidenav">
+                <md-toolbar class="md-theme-light">
+                    <h1 class="md-toolbar-tools">Novo Consumo</h1>
+                </md-toolbar>
+                <md-content layout-padding>
+                    <form>
+                        <md-select placeholder="Categoria" required
+                                   data-ng-model="consumoVm.consumo.Categoria"                                   
+                                   data-ng-change="consumoVm.buscarProdutos(consumoVm.consumo.Categoria)">
+                            <md-option data-ng-repeat="categoria in consumoVm.categorias"
+                                       data-ng-value="categoria">{{categoria.Nome}}</md-option>
+                        </md-select>
+                        <md-select placeholder="Produto" data-ng-model="consumoVm.consumo.Produto" required>
+                            <md-option data-ng-repeat="produto in consumoVm.produtos"
+                                       data-ng-value="produto">{{produto.Nome}}</md-option>
+                        </md-select>
+                    </form>
+                </md-content>
+                <md-action-buttons layout="row" layout-align="end center">
+                    <md-button data-ng-click="consumoVm.fecharFormulario()">Cancelar</md-button>
+                    <md-button data-ng-click="consumoVm.salvar(consumoVm.consumo)">Salvar</md-button>
+                </md-action-buttons>
+            </md-sidenav>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-content layout="row" layout-align="start center">
+                Total: <h3>{{consumoVm.comanda.Valor | currency: 'R$ '}}</h3>
+            </md-content>
+            <span flex></span>
+            <md-button layout-align="end center" data-ng-click="consumoVm.irParaFormulario()">
+                <md-icon>add_shopping_cart</md-icon>
+                Adicionar Consumo
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

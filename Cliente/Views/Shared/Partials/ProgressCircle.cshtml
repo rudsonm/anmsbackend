@@ -1,0 +1,12 @@
+﻿<div data-ng-if="mainVm.requisicoesPendentes()">
+    <md-content class="waiting-state-window"></md-content>
+    <md-content class="waiting-state" layout="column" layout-align="center center">
+        <md-progress-circular class="md-accent"
+                              data-md-diameter="80"
+                              data-md-mode="indeterminate">
+        </md-progress-circular>
+        <span class="md-title">
+            Carregando...
+        </span>
+    </md-content>
+</div>

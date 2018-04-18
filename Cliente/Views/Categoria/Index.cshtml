@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Categoria";
+}
+
+<div data-ng-controller="CategoriaController as categoriaVm">
+    <div data-ng-if="!categoriaVm.editando">
+        @Html.Partial("~/Views/Categoria/Components/Lista.cshtml")
+    </div>
+
+    <div data-ng-if="categoriaVm.editando">
+        @Html.Partial("~/Views/Categoria/Components/Cadastro.cshtml")
+    </div>
+
+    <md-button class="md-fab md-secondary btn-add" 
+               data-ng-click="categoriaVm.irParaFormulario()" 
+               data-ng-if="!categoriaVm.editando" 
+               aria-label="Cadastrar">
+        <md-icon>add</md-icon>
+    </md-button>
+</div>

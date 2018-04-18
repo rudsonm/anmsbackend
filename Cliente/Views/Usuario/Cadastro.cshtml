@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Usuário";
+}
+<md-card layout="column" data-ng-controller="UsuarioController as usuarioVm">
+    <md-card-title class="md-accent">
+        <md-card-title-text>
+            <span class="md-headline">Cadastro</span>
+            <small>Campos marcados com * são obrigatórios</small>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content class="md-no-momentum">
+        <form name="usuarioForm">
+            <div layout="column">
+                <md-input-container class="md-icon-left">
+                    <md-icon>person</md-icon>
+                    <input type="text" name="Nome" placeholder="Nome" data-ng-model="usuarioVm.usuario.Nome" required />
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>mail</md-icon>
+                    <input type="email" placeholder="Email" data-ng-model="usuarioVm.usuario.Email" />
+                </md-input-container>
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>perm_identity</md-icon>
+                    <input type="text" name="CpfCnpj" placeholder="CPF" data-ng-model="usuarioVm.usuario.CpjCnpj" required />
+                </md-input-container>
+            </div>
+            <div layout="row">
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>vpn_key</md-icon>
+                    <input type="password" placeholder="Senha" data-ng-model="usuarioVm.usuario.Senha" required />
+                </md-input-container>
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>vpn_key</md-icon>
+                    <input type="password" placeholder="Confirmar Senha" data-ng-model="usuarioVm.usuario.ConfirmarSenha" data-ng-enter="usuarioVm.salvar(usuarioVm.usuario)" required />
+                </md-input-container>
+            </div>
+        </form>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button data-ng-href="/Usuario">Cancelar</md-button>
+        <md-button data-ng-click="usuarioVm.salvar(usuarioVm.usuario)">Salvar</md-button>
+    </md-card-actions>
+</md-card>

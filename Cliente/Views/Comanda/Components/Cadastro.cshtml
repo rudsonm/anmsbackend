@@ -1,0 +1,35 @@
+﻿<md-card>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Cadastro</span>
+            <small>Campos marcados com * são obrigatórios</small>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content class="md-no-momentum">
+        <form>
+            <div layout="row">
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>find_replace</md-icon>
+                    <input type="text" placeholder="Código" data-ng-model="comandaVm.comanda.Codigo" required />
+                </md-input-container>
+                <md-input-container class="md-icon-left" flex>
+                    <md-icon>find_replace</md-icon>
+                    <md-select placeholder="Mesa" data-ng-model="comandaVm.comanda.Mesa" required>
+                        <md-option data-ng-repeat="mesa in comandaVm.mesas"
+                                   data-ng-value="mesa">{{mesa.Numero}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div layout="column">
+                <md-input-container class="md-icon-left">
+                    <md-icon>find_replace</md-icon>
+                    <input type="text" placeholder="Observação" data-ng-model="comandaVm.comanda.Observacao" />
+                </md-input-container>
+            </div>
+        </form>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button data-ng-click="comandaVm.editando = false">Cancelar</md-button>
+        <md-button data-ng-click="comandaVm.salvar(comandaVm.comanda)">Salvar</md-button>
+    </md-card-actions>
+</md-card>

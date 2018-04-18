@@ -1,0 +1,28 @@
+﻿<md-content layout="row" layout-wrap>
+    <md-card data-ng-repeat="comanda in comandaVm.comandas">
+        <md-toolbar class="tiny md-accent" layout="row">
+            <div flex="50">
+                <h2 class="md-toolbar-tools" style="height: 50px">
+                    <span>#{{comanda.Codigo}}</span>
+                </h2>
+            </div>
+            <div flex layout="row" layout-align="end center">
+                <div layout="column" layout-align="end center" style="padding-right: 1rem">
+                    <span style="font-size: 0.8rem">Mesa</span>
+                    <span style="font-size: 0.9rem">{{comanda.Mesa.Numero}}</span>
+                </div>                
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <md-list>
+                <md-list-item data-ng-repeat="consumo in comanda.Consumos">
+                    
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>Finalizar</md-button>
+            <md-button data-ng-click="comandaVm.abrirModalConsumo(comanda, $event)">Incluir Consumo</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

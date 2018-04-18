@@ -1,0 +1,28 @@
+[
+  {
+    "outputFileName": "Scripts/App.js",
+    "inputFiles": [
+      "Scripts/Module.js",
+      "Scripts/Services/ToastService.js",
+      "Scripts/Services/RestService.js",
+      "Scripts/Services/RequestsListenerService.js",
+      "Scripts/Resources/UsuarioResource.js",
+      "Scripts/Resources/ProdutoResource.js",
+      "Scripts/Resources/MesaResource.js",
+      "Scripts/Resources/ComandaResource.js",
+      "Scripts/Resources/CategoriaResource.js",
+      "Scripts/Filters/TelefoneFilter.js",
+      "Scripts/Directives/ngTooltip.js",
+      "Scripts/Directives/ngMask.js",
+      "Scripts/Directives/ngEnter.js",
+      "Scripts/Controllers/UsuarioController.js",
+      "Scripts/Controllers/ProdutoController.js",
+      "Scripts/Controllers/PedidoController.js",
+      "Scripts/Controllers/MesaController.js",
+      "Scripts/Controllers/MainController.js",
+      "Scripts/Controllers/ConsumoController.js",
+      "Scripts/Controllers/ComandaController.js",
+      "Scripts/Controllers/CategoriaController.js"
+    ]
+  }
+]

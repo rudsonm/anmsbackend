@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8"> 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		angular.module("module", []);
+		angular.module("module").controller("controller", function($scope, $http, $httpParamSerializerJQLike) {			
+			var baseUrl = "http://localhost:49664/api/";
+
+			$scope.authenticate = function(user) {
+				$http({
+					method: "POST",
+					url: baseUrl+"usuarios/autenticar",
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded'
+					},
+					data: $httpParamSerializerJQLike({
+						grant_type: 'password',
+						username: user.username,
+						password: user.password
+					})
+				}).then(
+					function(response) {
+						var token = response.data;
+						$http.defaults.headers.common["Authorization"] = response.data.token_type+" "+response.data.access_token;
+						_getUser(user);
+					}
+				);
+			}
+
+			function _getUser(user) {
+				$http.get(baseUrl+"usuarios", {data:{login: user.username, senha: user.password}}).then(function(response) {
+					$scope.user = response.data[0];
+				});
+			}
+
+			$scope.saveAddress = function(address) {
+				$http.post(baseUrl+"enderecos", address, {})
+					.success(function(response) {
+						$scope.address = response.data;
+					})
+					.error(function(response) {
+						alert("Error on post address");
+					});
+			}
+		});
+	</script>
+</head>
+<body ng-app="module" ng-controller="controller">
+	<form ng-if="!user.Id">
+		<div>
+			<label for="username">Username: </label>
+			<input id="username" type="text" ng-model="user.username" />
+		</div>
+		<div>
+			<label for="password">Password: </label>
+			<input id="password" type="password" ng-model="user.password" />
+		</div>
+		<div>
+			<button ng-click="authenticate(user)">Sign In</button>
+		</div>
+	</form>
+	<div>
+		<div id="user-info">
+			<div>
+				<h3>Usuário</h3>
+			</div>
+			<div>
+				<label for="user-nome">Nome: </label>
+				<input id="user-nome" type="text" ng-model="user.Nome" ng-disabled="user.Id" />
+			</div>
+			<div>
+				<label for="user-cpf">CPF: </label>
+				<input id="user-cpf" type="text" ng-model="user.CpfCnpj" ng-disabled="user.Id" />
+			</div>
+			<div>
+				<label for="user-email">Email: </label>
+				<input id="user-cpf" type="text" ng-model="user.Email" ng-disabled="user.Id" />
+			</div>
+		</div>			
+		<form ng-if="user.Id">
+			<div>
+				<h3>Endereço</h3>
+			</div>
+			<div>
+				<label for="endereco-cep">CEP</label>
+				<input id="endereco-cep" type="text" ng-model="endereco.Cep" ng-disabled="endereco.Id" />
+			</div>
+			<div>
+				<label for="endereco-bairro">Bairro</label>
+				<input id="endereco-bairro" type="text" ng-model="endereco.Bairro" ng-disabled="endereco.Id" />
+			</div>
+			<div>
+				<label for="endereco-logradouro">Logradouro</label>
+				<input id="endereco-logradouro" type="text" ng-model="endereco.Logradouro" ng-disabled="endereco.Id" />
+			</div>
+			<div>
+				<label for="endereco-numero">Número</label>
+				<input id="endereco-numero" type="number" ng-model="endereco.Numero" ng-disabled="endereco.Id" />
+			</div>
+			<div>
+				<label for="endereco-complemento">Complemento</label>
+				<input id="endereco-complemento" type="text" ng-model="endereco.Complemento" ng-disabled="endereco.Id" />
+			</div>
+			<div>
+				<button ng-click="saveAddress(endereco)">Save</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

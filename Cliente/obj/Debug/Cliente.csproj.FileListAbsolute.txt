@@ -1,0 +1,127 @@
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\Cliente.dll.config
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\Cliente.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\Cliente.pdb
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\Antlr3.Runtime.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\EntityFramework.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\Newtonsoft.Json.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Net.Http.Formatting.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Http.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Http.WebHost.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Mvc.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Optimization.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Providers.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Razor.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.WebPages.Deployment.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.WebPages.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.WebPages.Razor.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\WebGrease.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\EntityFramework.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\Newtonsoft.Json.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Net.Http.Formatting.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Http.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Http.WebHost.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Mvc.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.Razor.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.WebPages.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.WebPages.Deployment.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\bin\System.Web.WebPages.Razor.xml
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\obj\Debug\Cliente.dll
+C:\Users\rudson.mendes\Documents\Visual Studio 2013\Projects\API\Cliente\obj\Debug\Cliente.pdb
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\Cliente.dll.config
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\Cliente.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\Cliente.pdb
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\Antlr3.Runtime.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\EntityFramework.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\Newtonsoft.Json.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Net.Http.Formatting.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Http.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Http.WebHost.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Mvc.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Optimization.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Providers.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Razor.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.WebPages.Deployment.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.WebPages.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.WebPages.Razor.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\WebGrease.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\EntityFramework.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\Newtonsoft.Json.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Net.Http.Formatting.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Http.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Http.WebHost.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Mvc.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.Razor.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.WebPages.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.WebPages.Deployment.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\bin\System.Web.WebPages.Razor.xml
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\obj\Debug\Cliente.dll
+C:\Users\rudson.mendes\Source\Repos\appstudy\Cliente\obj\Debug\Cliente.pdb
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\Cliente.dll.config
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\Cliente.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\Cliente.pdb
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\Antlr3.Runtime.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\EntityFramework.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\Newtonsoft.Json.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Net.Http.Formatting.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Http.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Http.WebHost.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Mvc.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Optimization.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Providers.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Razor.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.WebPages.Deployment.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.WebPages.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.WebPages.Razor.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\WebGrease.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\EntityFramework.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\Newtonsoft.Json.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Net.Http.Formatting.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Http.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Http.WebHost.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Mvc.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.Razor.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.WebPages.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\bin\System.Web.WebPages.Deployment.xml
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\obj\Debug\Cliente.dll
+C:\Users\rudson.mendes\Source\Repos\asp.net-project\Cliente\obj\Debug\Cliente.pdb
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\Cliente.dll.config
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\Cliente.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\Cliente.pdb
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\Antlr3.Runtime.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\EntityFramework.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\Newtonsoft.Json.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Net.Http.Formatting.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Http.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Http.WebHost.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Mvc.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Optimization.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Providers.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Razor.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.WebPages.Deployment.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.WebPages.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.WebPages.Razor.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\WebGrease.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\EntityFramework.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\Newtonsoft.Json.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Net.Http.Formatting.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Http.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Http.WebHost.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Mvc.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.Razor.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.WebPages.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\bin\System.Web.WebPages.Deployment.xml
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\obj\Debug\Cliente.csproj.CoreCompileInputs.cache
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\obj\Debug\Cliente.dll
+C:\Users\rudsonm\source\repos\asp.net-project\Cliente\obj\Debug\Cliente.pdb

@@ -1,0 +1,107 @@
+﻿body {
+    background-color: #FAFAFA;
+}
+
+.nav-header img {
+     width: 100%;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+md-card-title {
+    /*background-color: rgb(97, 97, 97) !important;*/
+}
+
+md-card-actions {
+    padding-top: 0.5rem;
+    /*border-top: 1px solid rgb(97, 97, 97);*/
+    border-top: 1px solid #E0E0E0;
+}
+
+md-input-container {
+    margin: 1px 8px;
+}
+
+md-icon {
+    cursor:pointer;
+    color: #757575;
+}
+
+md-icon.blue:hover {
+    color: #42A5F5;
+}
+
+md-icon.red:hover {
+    color: #EF5350;
+}
+
+.btn-add {
+    position: absolute;
+    float: right;
+    right: 3%;
+    top: 4%;
+}
+
+@media only screen and (max-width : 320px) {
+    .btn-add {
+        position:fixed;
+        right: 5%;
+        top: 86.5%;        
+    }
+}
+
+.mesa {
+    width: 10%;
+}
+
+.ocupado {
+    background-color: #EF5350;
+}
+
+.livre {
+    background-color: #2ECC71;
+}
+
+md-toolbar.tiny {
+    min-height: 3rem;
+    height: 3rem;
+}
+
+.waiting-state-window {
+    position:fixed;
+    float: left;
+    top: 0;
+    left: 0;
+    background-color: #FAFAFA;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    z-index: 21;
+}
+
+.waiting-state {  
+    position: fixed;
+    float: left;
+    left: 52.5%;
+    top: 30%;
+    background-color: transparent;
+    z-index: 22;
+}
+
+.green-text {
+    color: #2ECC71;
+}
+
+.red-text {
+    color: #E74C3C;
+}
+
+.orange-text {
+    color: #F39C12;
+}
+
+.blue-text {
+    color: #3498DB;
+}

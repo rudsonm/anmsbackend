@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <settings>
+    <!--Determines if the bundle file should be automatically optimized after creation/update.-->
+    <minify>true</minify>
+    <!--Determine whether to generate/re-generate this bundle on building the solution.-->
+    <runOnBuild>true</runOnBuild>
+    <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
+    <outputDirectory />
+  </settings>
+  <!--The order of the <file> elements determines the order of the files in the bundle.-->
+  <files>
+    <file>/Scripts/Module.js</file>
+
+    <!-- Resources -->
+    <file>/Scripts/Resources/UsuarioResource.js</file>
+    <file>/Scripts/Resources/CategoriaResource.js</file>
+    <file>/Scripts/Resources/ProdutoResource.js</file>
+    <file>/Scripts/Resources/MesaResource.js</file>
+    <file>/Scripts/Resources/ComandaResource.js</file>    
+    
+    <!-- Services -->
+    <file>/Scripts/Services/ToastService.js</file>
+    <file>/Scripts/Services/RequestsListenerService.js</file>
+    <file>/Scripts/Services/RestService.js</file>
+
+    <!-- Directives -->
+    <file>/Scripts/Directives/ngEnter.js</file>
+    <file>/Scripts/Directives/ngMask.js</file>
+    <file>/Scripts/Directives/ngTooltip.js</file>
+    
+    <!-- Filters -->    
+    <file>/Scripts/Filters/TelefoneFilter.js</file>
+
+    <!-- Controllers -->
+    <file>/Scripts/Controllers/MainController.js</file>
+    <file>/Scripts/Controllers/UsuarioController.js</file>
+    <file>/Scripts/Controllers/CategoriaController.js</file>
+    <file>/Scripts/Controllers/ProdutoController.js</file>
+    <file>/Scripts/Controllers/MesaController.js</file>
+    <file>/Scripts/Controllers/ComandaController.js</file>
+    <file>/Scripts/Controllers/ConsumoController.js</file>
+    <file>/Scripts/Controllers/PedidoController.js</file>
+
+  </files>
+</bundle>

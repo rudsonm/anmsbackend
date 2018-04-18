@@ -1,0 +1,18 @@
+﻿<md-toast flex layout="row" 
+          class="clickable"
+          data-ng-click="toastVm.close()">
+    <md-icon data-ng-if="toastVm.icon"
+             flex="15"
+             layout-align="start center"
+             data-ng-bind="toastVm.icon"
+             aria-label="Icone"
+             data-ng-class="{'orange-text': toastVm.color === 'orange',
+                             'green-text': toastVm.color === 'green',
+                             'red-text': toastVm.color === 'red',
+                             'blue-text': toastVm.color === 'blue'}">
+    </md-icon>
+    <span flex
+          class="md-toast-text"
+          data-ng-bind="toastVm.content">
+    </span>
+</md-toast>
