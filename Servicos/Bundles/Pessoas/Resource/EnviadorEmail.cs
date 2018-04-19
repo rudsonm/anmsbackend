@@ -38,7 +38,7 @@ namespace Servicos.Bundles
             }
         }
 
-        public static void EnviarMultiplos(IEnumerable<string> emails, string titulo, string mensagem)
+        public static void EnviarMultiplos(List<string> emails, string titulo, string mensagem)
         {
             foreach (string email in emails)
                 Enviar(email, titulo, mensagem);

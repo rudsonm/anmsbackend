@@ -28,26 +28,27 @@ namespace Servicos.Bundles.Animais.Resource
         {
             var candidatos = _repository
                             .GetAll<SolicitacaoAdocao>()
-                            .Where(s => s.Doacao.Id == doacao.Id && !s.Status.Equals("CANCELADO"))
-                            .Select(s => new Pair(s.Usuario.Email, s.Status))
-                            .AsEnumerable();
-            var emails = candidatos
-                            .Where(p => !p.Second.Equals("ACEITO"))
-                            .Select(c => c.First.ToString());
+                            .Where(s => s.Doacao.Id == doacao.Id && s.Status.Equals("PENDENTE") || s.Status.Equals("SELECIONADO"))
+                            .Select(s => new { s.Usuario.Email, s.Status })
+                            .ToList();
+            List<string> emails = candidatos
+                            .Where(p => !p.Status.Equals("ACEITO"))
+                            .Select(c => c.Email)
+                            .ToList();
             switch (doacao.Status)
             {
                 case "CANCELADO":
                     EnviarNotificacaoCancelamento(doacao, emails);
                 break;
                 case "FINALIZADO":
-                    var emailCandidatoAprovado = candidatos.First(c => c.Second.Equals("APROVADO")).First.ToString();
+                    var emailCandidatoAprovado = candidatos.First(c => c.Status.Equals("SELECIONADO")).Email;
                     EnviarNotificacaoNaoElegidos(doacao, emails);
                     EnviarNotificacaoAprovado(doacao, emailCandidatoAprovado);
                 break;
             }
         }
 
-        private void EnviarNotificacaoCancelamento(Doacao doacao, IEnumerable<string> emails)
+        private void EnviarNotificacaoCancelamento(Doacao doacao, List<string> emails)
         {
             string mensagem = string.Concat(
                 "A doação do(a) ",
@@ -59,7 +60,7 @@ namespace Servicos.Bundles.Animais.Resource
             EnviadorEmail.EnviarMultiplos(emails, "Doação Cancelada.", mensagem);
         }
 
-        private void EnviarNotificacaoNaoElegidos(Doacao doacao, IEnumerable<string> emails)
+        private void EnviarNotificacaoNaoElegidos(Doacao doacao, List<string> emails)
         {
             string mensagem = string.Concat(
                 "Você não foi escolhido para adotar o(a) ",
@@ -67,7 +68,7 @@ namespace Servicos.Bundles.Animais.Resource
                 " ",
                 doacao.Animal.Nome
             );
-            EnviadorEmail.EnviarMultiplos(emails, "Doação Finalizada.", mensagem);
+            EnviadorEmail.EnviarMultiplos(emails.ToList(), "Doação Finalizada.", mensagem);
         }
 
         private void EnviarNotificacaoAprovado(Doacao doacao, string email)

@@ -31,8 +31,9 @@ namespace Servicos.Bundles.Animais.Resource
 
         public override void AfterUpdate(SolicitacaoAdocao solicitacaoAdocao)
         {
-            if(solicitacaoAdocao.Status == "ACEITO")
+            if(solicitacaoAdocao.Status == "SELECIONADO")
             {
+                _repository.Commit();
                 Doacao doacao = _doacaoService.GetOne(solicitacaoAdocao.Doacao.Id);
                 doacao.Status = "FINALIZADO";
                 _doacaoService.Update(doacao);

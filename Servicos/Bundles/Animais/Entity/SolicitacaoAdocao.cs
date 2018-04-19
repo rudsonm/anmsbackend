@@ -9,8 +9,10 @@ namespace Servicos.Bundles.Animais.Entity
     {
         [Description("PENDENTE")]
         PENDENTE,
-        [Description("ACEITO")]
-        ACEITO,
+        [Description("SELECIONADO")]
+        SELECIONADO,
+        [Description("CANCELADO")]
+        CANCELADO,
         [Description("RECUSADO")]
         RECUSADO
     }
@@ -20,6 +22,7 @@ namespace Servicos.Bundles.Animais.Entity
         public SolicitacaoAdocao()
         {
             //Status = SolicitacaoAdocaoStatus.PENDENTE;
+            Status = "PENDENTE";
         }
         public virtual Usuario Usuario { get; set; }
         public virtual Doacao Doacao { get; set; }
