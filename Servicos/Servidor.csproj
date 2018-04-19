@@ -285,6 +285,10 @@
     <Compile Include="Migrations\201804130214273_DoacaoStatusParaString.Designer.cs">
       <DependentUpon>201804130214273_DoacaoStatusParaString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804191820373_SolicitacaoStatusParaString.cs" />
+    <Compile Include="Migrations\201804191820373_SolicitacaoStatusParaString.Designer.cs">
+      <DependentUpon>201804191820373_SolicitacaoStatusParaString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bundles\Core\Repository\IRepository.cs" />
@@ -332,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804130214273_DoacaoStatusParaString.resx">
       <DependentUpon>201804130214273_DoacaoStatusParaString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804191820373_SolicitacaoStatusParaString.resx">
+      <DependentUpon>201804191820373_SolicitacaoStatusParaString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

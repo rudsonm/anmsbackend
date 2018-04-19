@@ -28,7 +28,7 @@ namespace Servicos.Bundles.Animais.Resource
         {
             var candidatos = _repository
                             .GetAll<SolicitacaoAdocao>()
-                            .Where(s => s.Doacao.Id == doacao.Id)
+                            .Where(s => s.Doacao.Id == doacao.Id && !s.Status.Equals("CANCELADO"))
                             .Select(s => new Pair(s.Usuario.Email, s.Status))
                             .AsEnumerable();
             var emails = candidatos
@@ -36,7 +36,7 @@ namespace Servicos.Bundles.Animais.Resource
                             .Select(c => c.First.ToString());
             switch (doacao.Status)
             {
-                case "CANCELADO":                    
+                case "CANCELADO":
                     EnviarNotificacaoCancelamento(doacao, emails);
                 break;
                 case "FINALIZADO":

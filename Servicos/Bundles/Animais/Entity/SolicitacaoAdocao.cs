@@ -19,16 +19,17 @@ namespace Servicos.Bundles.Animais.Entity
     {
         public SolicitacaoAdocao()
         {
-            Status = SolicitacaoAdocaoStatus.PENDENTE;
+            //Status = SolicitacaoAdocaoStatus.PENDENTE;
         }
         public virtual Usuario Usuario { get; set; }
         public virtual Doacao Doacao { get; set; }
-        public String Motivo { get; set; }
-        public SolicitacaoAdocaoStatus Status { get; set; }
+        public string Motivo { get; set; }
+        //public SolicitacaoAdocaoStatus Status { get; set; }
+        public string Status { get; set; }
 
         public override string[] GetIncludeProperties()
         {
-            return new string[] { "Usuario" };
+            return new string[] { "Usuario", "Doacao" };
         }
     }
 }
