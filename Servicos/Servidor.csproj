@@ -238,6 +238,7 @@
     <Compile Include="Bundles\Animais\Entity\Doacao.cs" />
     <Compile Include="Bundles\Animais\Entity\SolicitacaoAdocao.cs" />
     <Compile Include="Bundles\Animais\Resource\DoacaoService.cs" />
+    <Compile Include="Bundles\Animais\Resource\SolicitacaoAdocaoService.cs" />
     <Compile Include="Bundles\Core\Authentication\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Bundles\Core\Exception\LoginSenhaIncorretaException.cs" />

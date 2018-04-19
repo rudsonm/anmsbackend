@@ -17,7 +17,7 @@ namespace Servicos.Bundles.Animais.Controller
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAll()
+        public HttpResponseMessage GetAll(int doacao = 0, int usuario = 0, string nome = "")
         {
             var solicitacoes = _repository.GetAll<SolicitacaoAdocao>();
             return Request.CreateResponse(HttpStatusCode.OK, solicitacoes);
