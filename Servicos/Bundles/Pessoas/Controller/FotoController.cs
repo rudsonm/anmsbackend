@@ -43,13 +43,13 @@ namespace Servicos.Bundles.Pessoas.Controller
             var files = HttpContext.Current.Request.Files;            
             if (files.Count == 0)
                 return Request.CreateResponse(HttpStatusCode.NoContent, "Nenhum arquivo foi enviado");            
-            int id = Int32.Parse(HttpContext.Current.Request.Params["Entidade"].ToString());
-            Animal animal = this._repository.GetOne<Animal>(id);            
+            int entidadeId = Int32.Parse(HttpContext.Current.Request.Params["EntidadeId"].ToString());
+            string entidadeNome = HttpContext.Current.Request.Params["EntidadeNome"];            
             for (int i = 0; i < files.Count; i++)
             {                
                 MemoryStream ms = new MemoryStream();
                 files[i].InputStream.CopyTo(ms);
-                Foto foto = new Foto(animal, ms.ToArray(), files[i].ContentType);
+                Foto foto = new Foto(entidadeNome, entidadeId, ms.ToArray(), files[i].ContentType);
                 _repository.Add<Foto>(foto);                
             }
             _repository.Commit();

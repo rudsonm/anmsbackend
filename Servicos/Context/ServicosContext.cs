@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using Servicos.Bundles.Pessoas.Entity;
 using Servicos.Bundles.Animais.Entity;
+using Servicos.Bundles.Campanhas.Entity;
 
 namespace Servicos.Context
 {
@@ -34,5 +35,8 @@ namespace Servicos.Context
         public IDbSet<Doacao> Doacoes { get; set; }
         public IDbSet<Comentario> Comentarios { get; set; }
         public IDbSet<SolicitacaoAdocao> SolicitacoesAdocao { get; set; }
+
+        /* Campanha Bundle */
+        public IDbSet<Campanha> Campanhas { get; set; }
     }
 }
