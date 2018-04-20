@@ -33,6 +33,12 @@ namespace Servicos.Bundles.Campanhas.Entity
         public DateTime? DataTermino { get; set; }
         public string Descricao { get; set; }
         public string Status { get; set; }
+        public virtual float Andamento {
+            get
+            {
+                return (Contribuicao * 100) / Meta;
+            }
+        }
         public virtual List<int> Fotos
         {
             get
