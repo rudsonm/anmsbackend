@@ -1,12 +1,8 @@
-﻿using Servicos.Bundles.Core.Repository;
+﻿using System;
+using Servicos.Bundles.Core.Repository;
 using Servicos.Bundles.Core.Resource;
 using Servicos.Bundles.Pessoas.Entity;
-using Servicos.Context;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
 
 namespace Servicos.Bundles.Pessoas.Resource
 {

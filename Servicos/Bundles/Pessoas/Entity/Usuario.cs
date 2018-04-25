@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Servicos.Bundles.Core.Entity;
-
-namespace Servicos.Bundles.Pessoas.Entity
+﻿namespace Servicos.Bundles.Pessoas.Entity
 {
     public class Usuario : Pessoa
     {
@@ -13,9 +6,11 @@ namespace Servicos.Bundles.Pessoas.Entity
         {
             SuperAdmin = false;
             SenhaExpirada = false;
+            Tipo = "COLABORADOR";
         }
         public string Senha { get; set; }
         public bool SenhaExpirada { get; set; }
         public bool SuperAdmin { get; set; }
+        public string Tipo { get; set; }
     }
 }

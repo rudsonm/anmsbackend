@@ -305,3 +305,5 @@ C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.pdb
 C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.SolicitacaoStatusParaString.resources
 C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.MudancaEmFoto.resources
 C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.CampanhaModelo.resources
+C:\Users\rudsonm\source\repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.UsuarioTipo.resources
+C:\Users\rudsonm\source\repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.CampanhaUsuario.resources

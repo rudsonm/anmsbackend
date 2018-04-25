@@ -1,4 +1,5 @@
 ﻿using Servicos.Bundles.Core.Entity;
+using Servicos.Bundles.Pessoas.Entity;
 using Servicos.Context;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,7 @@ namespace Servicos.Bundles.Campanhas.Entity
         public DateTime? DataTermino { get; set; }
         public string Descricao { get; set; }
         public string Status { get; set; }
+        public Usuario Usuario { get; set; }
         public virtual float Andamento {
             get
             {
@@ -48,6 +50,11 @@ namespace Servicos.Bundles.Campanhas.Entity
                                             .Select(foto => foto.Id)
                                             .ToList();
             }
+        }
+
+        public override string[] GetIncludeProperties()
+        {
+            return new string[] { "Usuario" };
         }
     }
 }
