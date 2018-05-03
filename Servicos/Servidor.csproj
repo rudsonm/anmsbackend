@@ -242,6 +242,7 @@
     <Compile Include="Bundles\Animais\Resource\SolicitacaoAdocaoService.cs" />
     <Compile Include="Bundles\Campanhas\Controller\CampanhaController.cs" />
     <Compile Include="Bundles\Campanhas\Entity\Campanha.cs" />
+    <Compile Include="Bundles\Campanhas\Exception\CampanhaPrazoExclusao.cs" />
     <Compile Include="Bundles\Campanhas\Exception\TipoUsuarioCampanhaException.cs" />
     <Compile Include="Bundles\Campanhas\Resource\CampanhaService.cs" />
     <Compile Include="Bundles\Core\Authentication\SimpleAuthorizationServerProvider.cs" />

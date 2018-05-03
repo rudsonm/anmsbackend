@@ -17,10 +17,18 @@ namespace Servicos.Bundles.Campanhas.Controller
         }
 
         [HttpGet]
-        public HttpResponseMessage Get(int usuario = 0)
+        public HttpResponseMessage Get(int usuario = 0, string status = "")
         {
-            var campanhas = _service.Get(usuario);
+            var campanhas = _service.Get(usuario, status);
             return Request.CreateResponse(HttpStatusCode.OK, campanhas);
+        }
+
+        [HttpGet]
+        [Route("api/campanhas/{id}")]
+        public HttpResponseMessage GetOne(int id)
+        {
+            Campanha campanha = _service.GetOne(id);
+            return Request.CreateResponse(HttpStatusCode.OK, campanha);
         }
 
         [HttpPost]
@@ -34,12 +42,23 @@ namespace Servicos.Bundles.Campanhas.Controller
             }
         }
 
-        [HttpGet]
-        [Route("api/campanhas/{id}")]
-        public HttpResponseMessage GetOne(int id)
+        [HttpPut]
+        public HttpResponseMessage Put(Campanha campanha)
         {
-            Campanha campanha = _service.GetOne(id);
+            _service.Update(campanha);
             return Request.CreateResponse(HttpStatusCode.OK, campanha);
+        }
+
+        [HttpDelete]
+        [Route("api/campanhas/{id}")]
+        public HttpResponseMessage Delete(int id)
+        {
+            try {
+                _service.Remove(id);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            } catch (Exception e) {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, e.Message);
+            }            
         }
     }
 }

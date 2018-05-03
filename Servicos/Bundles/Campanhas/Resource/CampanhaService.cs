@@ -14,10 +14,12 @@ namespace Servicos.Bundles.Campanhas.Resource
         {
         }
 
-        public IEnumerable<Campanha> Get(int usuario = 0)
+        public IEnumerable<Campanha> Get(int usuario = 0, string status = "")
         {
             if (usuario != 0)
                 _parameters.Add(c => c.Usuario.Id == usuario);
+            if (!string.IsNullOrWhiteSpace(status))
+                _parameters.Add(c => c.Status == status);
             return base.GetAll();
         }
 
@@ -25,6 +27,13 @@ namespace Servicos.Bundles.Campanhas.Resource
         {
             if (campanha.Usuario.Tipo != "ORGANIZACAO")
                 throw new TipoUsuarioCampanhaException();
+        }
+
+        public override void OnDelete(int id)
+        {
+            Campanha campanha = this.GetOne(id);
+            if (campanha.DataInicio > new DateTime())
+                throw new CampanhaPrazoExclusao();
         }
     }
 }

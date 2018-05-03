@@ -13,20 +13,22 @@ namespace Servicos.Bundles.Animais.Controller
     public class DoacaoController : ApiController
     {
         private readonly DoacaoService _service;
-
-        public DoacaoController(DoacaoService service)
+        private readonly IRepository _repository;
+        public DoacaoController(DoacaoService service, IRepository repository)
         {
             _service = service;
+            _repository = repository;
         }
 
         [HttpPost]
         public HttpResponseMessage Post(Doacao doacao)
         {
             Animal animal = doacao.Animal;
-            _service.Add(doacao);
+            _repository.Add<Animal>(animal);
+            _repository.Commit();
 
             Doacao novaDoacao = new Doacao(animal, doacao.Usuario);
-            _service.Add(doacao);
+            _service.Add(novaDoacao);
 
             return Request.CreateResponse(HttpStatusCode.OK, novaDoacao);
         }
