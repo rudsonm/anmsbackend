@@ -307,3 +307,4 @@ C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations
 C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.CampanhaModelo.resources
 C:\Users\rudsonm\source\repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.UsuarioTipo.resources
 C:\Users\rudsonm\source\repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.CampanhaUsuario.resources
+C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.UsuarioCampanha.resources

@@ -34,7 +34,7 @@ namespace Servicos.Bundles.Campanhas.Entity
         public DateTime? DataTermino { get; set; }
         public string Descricao { get; set; }
         public string Status { get; set; }
-        public Usuario Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
         public virtual float Andamento {
             get
             {

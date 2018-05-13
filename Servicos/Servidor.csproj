@@ -311,6 +311,10 @@
     <Compile Include="Migrations\201804231804040_CampanhaUsuario.Designer.cs">
       <DependentUpon>201804231804040_CampanhaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805032306220_UsuarioCampanha.cs" />
+    <Compile Include="Migrations\201805032306220_UsuarioCampanha.Designer.cs">
+      <DependentUpon>201805032306220_UsuarioCampanha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bundles\Core\Repository\IRepository.cs" />
@@ -373,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804231804040_CampanhaUsuario.resx">
       <DependentUpon>201804231804040_CampanhaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805032306220_UsuarioCampanha.resx">
+      <DependentUpon>201805032306220_UsuarioCampanha.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -29,9 +29,36 @@ namespace Servicos.Bundles.Campanhas.Resource
                 throw new TipoUsuarioCampanhaException();
         }
 
+        public override void BeforeUpdate(Campanha campanha)
+        {
+            Campanha antiga = base.GetOne(campanha.Id);
+            switch(campanha.Status)
+            {
+                case "EM_ANDAMENTO":
+                    if (antiga.Status.Equals("CANCELADO") || antiga.Status.Equals("FINALIZADO"))
+                        throw new Exception("Não é possível continuar uma campanha encerrada.");
+                    break;
+                case "PAUSADO":
+                    if (antiga.Status.Equals("CANCELADO") || antiga.Status.Equals("FINALIZADO"))
+                        throw new Exception("Não é possível pausar uma campanha encerrada.");
+                    if (antiga.Status.Equals("PAUSADO"))
+                        throw new Exception("A campanha já está pausada.");
+                    break;
+                // REVER 
+                case "FINALIZADO":
+                    if (!antiga.Status.Equals("EM_ANDAMENTO"))
+                        throw new Exception("Não é possível finalizar uma campanha que não está em andamento.");
+                    break;
+                case "CANCELADO":
+                    if (!antiga.Status.Equals("EM_ANDAMENTO"))
+                        throw new Exception("Não é possível cancelar uma campanha que não está em andamento.");
+                    break;                
+            }
+        }
+
         public override void OnDelete(int id)
         {
-            Campanha campanha = this.GetOne(id);
+            Campanha campanha = base.GetOne(id);
             if (campanha.DataInicio > new DateTime())
                 throw new CampanhaPrazoExclusao();
         }
