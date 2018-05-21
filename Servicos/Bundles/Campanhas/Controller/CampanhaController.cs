@@ -43,8 +43,9 @@ namespace Servicos.Bundles.Campanhas.Controller
         }
 
         [HttpPut]
-        public HttpResponseMessage Put(Campanha campanha)
-        {
+        [Route("api/campanhas/{id}")]
+        public HttpResponseMessage Put(int id, [FromBody] Campanha campanha)
+        {            
             _service.Update(campanha);
             return Request.CreateResponse(HttpStatusCode.OK, campanha);
         }

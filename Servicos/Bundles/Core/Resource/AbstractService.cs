@@ -31,7 +31,7 @@ namespace Servicos.Bundles.Core.Resource
             return entity;
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             BeforeUpdate(entity);
             _repository.Update(entity);

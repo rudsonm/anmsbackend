@@ -29,28 +29,36 @@ namespace Servicos.Bundles.Campanhas.Resource
                 throw new TipoUsuarioCampanhaException();
         }
 
+        public override void Update(Campanha campanha)
+        {
+            this.BeforeUpdate(campanha);
+            Campanha c = _repository.GetOne<Campanha>(campanha.Id);
+            c.Status = campanha.Status;
+            _repository.Commit();
+        }
+
         public override void BeforeUpdate(Campanha campanha)
         {
-            Campanha antiga = base.GetOne(campanha.Id);
+            string status = base.GetOne(campanha.Id).Status;
             switch(campanha.Status)
             {
                 case "EM_ANDAMENTO":
-                    if (antiga.Status.Equals("CANCELADO") || antiga.Status.Equals("FINALIZADO"))
+                    if (status.Equals("CANCELADO") || status.Equals("FINALIZADO"))
                         throw new Exception("Não é possível continuar uma campanha encerrada.");
                     break;
                 case "PAUSADO":
-                    if (antiga.Status.Equals("CANCELADO") || antiga.Status.Equals("FINALIZADO"))
+                    if (status.Equals("CANCELADO") || status.Equals("FINALIZADO"))
                         throw new Exception("Não é possível pausar uma campanha encerrada.");
-                    if (antiga.Status.Equals("PAUSADO"))
+                    if (status.Equals("PAUSADO"))
                         throw new Exception("A campanha já está pausada.");
                     break;
                 // REVER 
                 case "FINALIZADO":
-                    if (!antiga.Status.Equals("EM_ANDAMENTO"))
+                    if (!status.Equals("EM_ANDAMENTO"))
                         throw new Exception("Não é possível finalizar uma campanha que não está em andamento.");
                     break;
                 case "CANCELADO":
-                    if (!antiga.Status.Equals("EM_ANDAMENTO"))
+                    if (!status.Equals("EM_ANDAMENTO"))
                         throw new Exception("Não é possível cancelar uma campanha que não está em andamento.");
                     break;                
             }

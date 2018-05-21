@@ -28,11 +28,10 @@ namespace Servicos.Bundles.Animais.Resource
         {
             var candidatos = _repository
                             .GetAll<SolicitacaoAdocao>()
-                            .Where(s => s.Doacao.Id == doacao.Id && s.Status.Equals("PENDENTE") || s.Status.Equals("SELECIONADO"))
-                            .Select(s => new { s.Usuario.Email, s.Status })
-                            .ToList();
-            List<string> emails = candidatos
-                            .Where(p => !p.Status.Equals("ACEITO"))
+                            .Where(s => s.Doacao.Id == doacao.Id && (s.Status.Equals("PENDENTE") || s.Status.Equals("SELECIONADO")))
+                            .Select(s => new { s.Usuario.Email, s.Status });
+            var emails = candidatos
+                            .Where(p => !p.Status.Equals("SELECIONADO"))
                             .Select(c => c.Email)
                             .ToList();
             switch (doacao.Status)

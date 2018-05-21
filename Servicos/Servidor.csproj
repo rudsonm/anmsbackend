@@ -240,8 +240,10 @@
     <Compile Include="Bundles\Animais\Entity\SolicitacaoAdocao.cs" />
     <Compile Include="Bundles\Animais\Resource\DoacaoService.cs" />
     <Compile Include="Bundles\Animais\Resource\SolicitacaoAdocaoService.cs" />
+    <Compile Include="Bundles\Campanhas\Controller\ColaboracaoController.cs" />
     <Compile Include="Bundles\Campanhas\Controller\CampanhaController.cs" />
     <Compile Include="Bundles\Campanhas\Entity\Campanha.cs" />
+    <Compile Include="Bundles\Campanhas\Entity\Colaboracao.cs" />
     <Compile Include="Bundles\Campanhas\Exception\CampanhaPrazoExclusao.cs" />
     <Compile Include="Bundles\Campanhas\Exception\TipoUsuarioCampanhaException.cs" />
     <Compile Include="Bundles\Campanhas\Resource\CampanhaService.cs" />
@@ -283,37 +285,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803151813027_FirstUse.cs" />
-    <Compile Include="Migrations\201803151813027_FirstUse.Designer.cs">
-      <DependentUpon>201803151813027_FirstUse.cs</DependentUpon>
+    <Compile Include="Migrations\201805152050164_Colaboracao.cs" />
+    <Compile Include="Migrations\201805152050164_Colaboracao.Designer.cs">
+      <DependentUpon>201805152050164_Colaboracao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804130214273_DoacaoStatusParaString.cs" />
-    <Compile Include="Migrations\201804130214273_DoacaoStatusParaString.Designer.cs">
-      <DependentUpon>201804130214273_DoacaoStatusParaString.cs</DependentUpon>
+    <Compile Include="Migrations\201805152105014_ColaboracaoEditable.cs" />
+    <Compile Include="Migrations\201805152105014_ColaboracaoEditable.Designer.cs">
+      <DependentUpon>201805152105014_ColaboracaoEditable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804191820373_SolicitacaoStatusParaString.cs" />
-    <Compile Include="Migrations\201804191820373_SolicitacaoStatusParaString.Designer.cs">
-      <DependentUpon>201804191820373_SolicitacaoStatusParaString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804192325177_MudancaEmFoto.cs" />
-    <Compile Include="Migrations\201804192325177_MudancaEmFoto.Designer.cs">
-      <DependentUpon>201804192325177_MudancaEmFoto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804200024080_CampanhaModelo.cs" />
-    <Compile Include="Migrations\201804200024080_CampanhaModelo.Designer.cs">
-      <DependentUpon>201804200024080_CampanhaModelo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804231724220_UsuarioTipo.cs" />
-    <Compile Include="Migrations\201804231724220_UsuarioTipo.Designer.cs">
-      <DependentUpon>201804231724220_UsuarioTipo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804231804040_CampanhaUsuario.cs" />
-    <Compile Include="Migrations\201804231804040_CampanhaUsuario.Designer.cs">
-      <DependentUpon>201804231804040_CampanhaUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805032306220_UsuarioCampanha.cs" />
-    <Compile Include="Migrations\201805032306220_UsuarioCampanha.Designer.cs">
-      <DependentUpon>201805032306220_UsuarioCampanha.cs</DependentUpon>
+    <Compile Include="Migrations\201805152107542_ColaboracaoQuantidadeFloat.cs" />
+    <Compile Include="Migrations\201805152107542_ColaboracaoQuantidadeFloat.Designer.cs">
+      <DependentUpon>201805152107542_ColaboracaoQuantidadeFloat.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -357,29 +339,14 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803151813027_FirstUse.resx">
-      <DependentUpon>201803151813027_FirstUse.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805152050164_Colaboracao.resx">
+      <DependentUpon>201805152050164_Colaboracao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804130214273_DoacaoStatusParaString.resx">
-      <DependentUpon>201804130214273_DoacaoStatusParaString.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805152105014_ColaboracaoEditable.resx">
+      <DependentUpon>201805152105014_ColaboracaoEditable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804191820373_SolicitacaoStatusParaString.resx">
-      <DependentUpon>201804191820373_SolicitacaoStatusParaString.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804192325177_MudancaEmFoto.resx">
-      <DependentUpon>201804192325177_MudancaEmFoto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804200024080_CampanhaModelo.resx">
-      <DependentUpon>201804200024080_CampanhaModelo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804231724220_UsuarioTipo.resx">
-      <DependentUpon>201804231724220_UsuarioTipo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804231804040_CampanhaUsuario.resx">
-      <DependentUpon>201804231804040_CampanhaUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805032306220_UsuarioCampanha.resx">
-      <DependentUpon>201805032306220_UsuarioCampanha.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805152107542_ColaboracaoQuantidadeFloat.resx">
+      <DependentUpon>201805152107542_ColaboracaoQuantidadeFloat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
