@@ -242,8 +242,10 @@
     <Compile Include="Bundles\Animais\Resource\SolicitacaoAdocaoService.cs" />
     <Compile Include="Bundles\Campanhas\Controller\ColaboracaoController.cs" />
     <Compile Include="Bundles\Campanhas\Controller\CampanhaController.cs" />
+    <Compile Include="Bundles\Campanhas\Controller\ParecerController.cs" />
     <Compile Include="Bundles\Campanhas\Entity\Campanha.cs" />
     <Compile Include="Bundles\Campanhas\Entity\Colaboracao.cs" />
+    <Compile Include="Bundles\Campanhas\Entity\Parecer.cs" />
     <Compile Include="Bundles\Campanhas\Exception\CampanhaPrazoExclusao.cs" />
     <Compile Include="Bundles\Campanhas\Exception\TipoUsuarioCampanhaException.cs" />
     <Compile Include="Bundles\Campanhas\Resource\CampanhaService.cs" />

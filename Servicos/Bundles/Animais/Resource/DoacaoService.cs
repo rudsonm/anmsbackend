@@ -16,11 +16,14 @@ namespace Servicos.Bundles.Animais.Resource
         {
         }
 
-        public IEnumerable<Doacao> Get(string status)
+        public IEnumerable<Doacao> Get(string status, int animal, string animal_nome)
         {
             if (!string.IsNullOrWhiteSpace(status))
                 base._parameters.Add(d => d.Status.Equals(status));
-
+            if (animal != 0)
+                base._parameters.Add(d => d.Animal.Id == animal);
+            else if (!string.IsNullOrWhiteSpace(animal_nome))
+                base._parameters.Add(d => d.Animal.Nome.Contains(animal_nome) || d.Animal.Especie.Contains(animal_nome));
             return base.GetAll();
         }
 

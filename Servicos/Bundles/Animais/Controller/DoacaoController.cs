@@ -34,9 +34,9 @@ namespace Servicos.Bundles.Animais.Controller
         }
 
         [HttpGet]
-        public HttpResponseMessage Get(string status = "")
+        public HttpResponseMessage Get(string status = "", int animal = 0, string animal_nome = "")
         {
-            IEnumerable<Doacao> doacoes = _service.Get(status);
+            IEnumerable<Doacao> doacoes = _service.Get(status, animal, animal_nome);
             return Request.CreateResponse(HttpStatusCode.OK, doacoes);
         }
         

@@ -39,5 +39,6 @@ namespace Servicos.Context
         /* Campanha Bundle */
         public IDbSet<Campanha> Campanhas { get; set; }
         public IDbSet<Colaboracao> Colaboracoes { get; set; }
+        public IDbSet<Parecer> Pareceres { get; set; }
     }
 }
