@@ -1,6 +1,7 @@
 ﻿using Servicos.Bundles.Campanhas.Entity;
 using Servicos.Bundles.Campanhas.Resource;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -35,8 +36,16 @@ namespace Servicos.Bundles.Campanhas.Controller
         public HttpResponseMessage Post(Campanha campanha)
         {
             try {
-                _service.Add(campanha);
-                return Request.CreateResponse(HttpStatusCode.OK, campanha);
+                var mensagensErro = ValidarCampanha(campanha);
+                if (mensagensErro.Count == 0)
+                {
+                    _service.Add(campanha);
+                    return Request.CreateResponse(HttpStatusCode.OK, new { status = true, campanha });
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { status = false, mensagensErro });
+                }
             } catch (Exception e) {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, e.Message);
             }
@@ -60,6 +69,32 @@ namespace Servicos.Bundles.Campanhas.Controller
             } catch (Exception e) {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, e.Message);
             }            
+        }
+
+        private List<string> ValidarCampanha(Campanha c)
+        {
+            List<string> retorno = new List<string>();
+
+            if (string.IsNullOrEmpty(c.Descricao))
+                retorno.Add("A descrição da campanha é obrigatória");
+
+            if (c.DataInicio == null)
+                retorno.Add("A data de início da campanha é obrigatória");
+
+            if (c.DataTermino == null)
+                retorno.Add("A data de término da campanha é obrigatória");
+
+            if (string.IsNullOrEmpty(c.Titulo))
+            {
+                retorno.Add("O título da campanha é obrigatório");
+            }
+
+            if (c.Meta <= 0)
+            {
+                retorno.Add("A meta da campanha deve ser maior que zero");
+            }
+
+            return retorno;
         }
     }
 }

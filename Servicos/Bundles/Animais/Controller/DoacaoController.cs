@@ -23,14 +23,22 @@ namespace Servicos.Bundles.Animais.Controller
         [HttpPost]
         public HttpResponseMessage Post(Doacao doacao)
         {
+            List<string> mensagensErro;
+
             Animal animal = doacao.Animal;
+            mensagensErro = ValidarAnimal(animal);
+
+            if (mensagensErro.Count > 0)
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { status = false, mensagensErro });
+
             _repository.Add<Animal>(animal);
             _repository.Commit();
+
 
             Doacao novaDoacao = new Doacao(animal, doacao.Usuario);
             _service.Add(novaDoacao);
 
-            return Request.CreateResponse(HttpStatusCode.OK, novaDoacao);
+            return Request.CreateResponse(HttpStatusCode.OK, new {status = true, novaDoacao });
         }
 
         [HttpGet]
@@ -64,6 +72,28 @@ namespace Servicos.Bundles.Animais.Controller
         {
             _service.Remove(id);
             return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        private List<string> ValidarAnimal(Animal a)
+        {
+            List<string> mensagensErro = new List<string>();
+
+            if (!a.Ativo)
+                mensagensErro.Add("O cadastro do animal deve estar ativo para ser doado");
+
+            if (string.IsNullOrEmpty(a.Nome))
+                mensagensErro.Add("O nome do animal é obrigatório");
+
+            if (string.IsNullOrEmpty(a.Descricao))
+                mensagensErro.Add("A descrição do animal é obrigatória");
+            
+            if (string.IsNullOrEmpty(a.Especie))
+                mensagensErro.Add("A espécie do animal é obrigatória");
+
+            if (a.Peso <= 0)
+                mensagensErro.Add("O peso do animal deve ser maior que zero");
+
+            return mensagensErro;
         }
     }
 }
