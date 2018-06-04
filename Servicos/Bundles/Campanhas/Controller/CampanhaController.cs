@@ -81,9 +81,6 @@ namespace Servicos.Bundles.Campanhas.Controller
             if (c.DataInicio == null)
                 retorno.Add("A data de início da campanha é obrigatória");
 
-            if (c.DataTermino == null)
-                retorno.Add("A data de término da campanha é obrigatória");
-
             if (string.IsNullOrEmpty(c.Titulo))
             {
                 retorno.Add("O título da campanha é obrigatório");

@@ -100,13 +100,13 @@ namespace Servicos.Bundles.Pessoas.Controller
             else if (u.Senha.Length < 6)
                 retorno.Add("A senha deve possuir pelo menos seis dígitos");
 
-            if (!CpfCnpjUtils.IsValid(u.CpfCnpj))
+            /*if (!CpfCnpjUtils.IsValid(u.CpfCnpj))
             {
                 if (u.Tipo.Equals("COLABORADOR"))
                     retorno.Add("CPF inválido");
                 else
                     retorno.Add("CNPJ inválido");
-            }
+            }*/
 
             return retorno;
         }

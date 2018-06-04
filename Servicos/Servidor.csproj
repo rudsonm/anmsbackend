@@ -299,6 +299,14 @@
     <Compile Include="Migrations\201805152107542_ColaboracaoQuantidadeFloat.Designer.cs">
       <DependentUpon>201805152107542_ColaboracaoQuantidadeFloat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806041736267_Merge.cs" />
+    <Compile Include="Migrations\201806041736267_Merge.Designer.cs">
+      <DependentUpon>201806041736267_Merge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806041923572_ParecerCampanha.cs" />
+    <Compile Include="Migrations\201806041923572_ParecerCampanha.Designer.cs">
+      <DependentUpon>201806041923572_ParecerCampanha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bundles\Core\Repository\IRepository.cs" />
@@ -349,6 +357,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805152107542_ColaboracaoQuantidadeFloat.resx">
       <DependentUpon>201805152107542_ColaboracaoQuantidadeFloat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041736267_Merge.resx">
+      <DependentUpon>201806041736267_Merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041923572_ParecerCampanha.resx">
+      <DependentUpon>201806041923572_ParecerCampanha.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

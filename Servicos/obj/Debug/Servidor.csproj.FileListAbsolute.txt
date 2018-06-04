@@ -303,3 +303,5 @@ C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations
 C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servidor.csproj.GenerateResource.Cache
 C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.ColaboracaoEditable.resources
 C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.ColaboracaoQuantidadeFloat.resources
+C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.Merge.resources
+C:\Users\rudsonm\Source\Repos\anmsbackend\Servicos\obj\Debug\Servicos.Migrations.ParecerCampanha.resources
