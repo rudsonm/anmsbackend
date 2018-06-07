@@ -82,14 +82,10 @@ namespace Servicos.Bundles.Campanhas.Controller
                 retorno.Add("A data de início da campanha é obrigatória");
 
             if (string.IsNullOrEmpty(c.Titulo))
-            {
                 retorno.Add("O título da campanha é obrigatório");
-            }
 
             if (c.Meta <= 0)
-            {
                 retorno.Add("A meta da campanha deve ser maior que zero");
-            }
 
             return retorno;
         }

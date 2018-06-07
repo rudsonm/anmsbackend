@@ -100,6 +100,9 @@ namespace Servicos.Bundles.Pessoas.Controller
             else if (u.Senha.Length < 6)
                 retorno.Add("A senha deve possuir pelo menos seis dígitos");
 
+            if (string.IsNullOrWhiteSpace(u.Tipo))
+                retorno.Add("A escolha de um tipo é obrigatória");
+
             /*if (!CpfCnpjUtils.IsValid(u.CpfCnpj))
             {
                 if (u.Tipo.Equals("COLABORADOR"))
