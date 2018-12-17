@@ -231,26 +231,33 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Bundles\Animais\Controller\AnimalFotoController.cs" />
     <Compile Include="Bundles\Animais\Controller\ComentarioController.cs" />
     <Compile Include="Bundles\Animais\Controller\DoacaoController.cs" />
     <Compile Include="Bundles\Animais\Controller\SolicitacaoAdocaoController.cs" />
     <Compile Include="Bundles\Animais\Entity\Animal.cs" />
     <Compile Include="Bundles\Animais\Entity\Comentario.cs" />
     <Compile Include="Bundles\Animais\Entity\Doacao.cs" />
+    <Compile Include="Bundles\Animais\Entity\AnimalFoto.cs" />
     <Compile Include="Bundles\Animais\Entity\SolicitacaoAdocao.cs" />
     <Compile Include="Bundles\Animais\Resource\DoacaoService.cs" />
     <Compile Include="Bundles\Animais\Resource\SolicitacaoAdocaoService.cs" />
     <Compile Include="Bundles\Campanhas\Controller\ColaboracaoController.cs" />
     <Compile Include="Bundles\Campanhas\Controller\CampanhaController.cs" />
+    <Compile Include="Bundles\Campanhas\Controller\CampanhaFotoController.cs" />
+    <Compile Include="Bundles\Campanhas\Controller\ParecerFotoController.cs" />
     <Compile Include="Bundles\Campanhas\Controller\ParecerController.cs" />
     <Compile Include="Bundles\Campanhas\Entity\Campanha.cs" />
+    <Compile Include="Bundles\Campanhas\Entity\CampanhaFoto.cs" />
     <Compile Include="Bundles\Campanhas\Entity\Colaboracao.cs" />
     <Compile Include="Bundles\Campanhas\Entity\Parecer.cs" />
+    <Compile Include="Bundles\Campanhas\Entity\ParecerFoto.cs" />
     <Compile Include="Bundles\Campanhas\Exception\CampanhaPrazoExclusao.cs" />
     <Compile Include="Bundles\Campanhas\Exception\TipoUsuarioCampanhaException.cs" />
     <Compile Include="Bundles\Campanhas\Resource\CampanhaService.cs" />
     <Compile Include="Bundles\Core\Authentication\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Bundles\Core\Entity\AbstractFoto.cs" />
     <Compile Include="Bundles\Core\Exception\LoginSenhaIncorretaException.cs" />
     <Compile Include="Bundles\Core\Repository\AbstractEditableEntityRepository.cs" />
     <Compile Include="Bundles\Core\Repository\AbstractEntityRepository.cs" />
@@ -267,7 +274,7 @@
     <Compile Include="Bundles\Pessoas\Controller\TelefoneController.cs" />
     <Compile Include="Bundles\Pessoas\Controller\UsuarioController.cs" />
     <Compile Include="Bundles\Pessoas\Entity\Categoria.cs" />
-    <Compile Include="Bundles\Pessoas\Entity\Foto.cs" />
+    <Compile Include="Bundles\Pessoas\Entity\PessoaFoto.cs" />
     <Compile Include="Bundles\Pessoas\Resource\EnviadorEmail.cs" />
     <Compile Include="Bundles\Pessoas\Resource\EstadoImporter.cs" />
     <Compile Include="Bundles\Pessoas\Resource\PessoaService.cs" />
@@ -287,25 +294,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805152050164_Colaboracao.cs" />
-    <Compile Include="Migrations\201805152050164_Colaboracao.Designer.cs">
-      <DependentUpon>201805152050164_Colaboracao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805152105014_ColaboracaoEditable.cs" />
-    <Compile Include="Migrations\201805152105014_ColaboracaoEditable.Designer.cs">
-      <DependentUpon>201805152105014_ColaboracaoEditable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805152107542_ColaboracaoQuantidadeFloat.cs" />
-    <Compile Include="Migrations\201805152107542_ColaboracaoQuantidadeFloat.Designer.cs">
-      <DependentUpon>201805152107542_ColaboracaoQuantidadeFloat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806041736267_Merge.cs" />
-    <Compile Include="Migrations\201806041736267_Merge.Designer.cs">
-      <DependentUpon>201806041736267_Merge.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806041923572_ParecerCampanha.cs" />
-    <Compile Include="Migrations\201806041923572_ParecerCampanha.Designer.cs">
-      <DependentUpon>201806041923572_ParecerCampanha.cs</DependentUpon>
+    <Compile Include="Migrations\201812171705194_Migration inicial.cs" />
+    <Compile Include="Migrations\201812171705194_Migration inicial.Designer.cs">
+      <DependentUpon>201812171705194_Migration inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -349,20 +340,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805152050164_Colaboracao.resx">
-      <DependentUpon>201805152050164_Colaboracao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805152105014_ColaboracaoEditable.resx">
-      <DependentUpon>201805152105014_ColaboracaoEditable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805152107542_ColaboracaoQuantidadeFloat.resx">
-      <DependentUpon>201805152107542_ColaboracaoQuantidadeFloat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806041736267_Merge.resx">
-      <DependentUpon>201806041736267_Merge.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806041923572_ParecerCampanha.resx">
-      <DependentUpon>201806041923572_ParecerCampanha.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812171705194_Migration inicial.resx">
+      <DependentUpon>201812171705194_Migration inicial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -383,7 +362,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49664</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49664/</IISUrl>
+          <IISUrl>http://localhost:23456/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

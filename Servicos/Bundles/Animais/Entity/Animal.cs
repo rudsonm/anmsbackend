@@ -31,10 +31,11 @@ namespace Servicos.Bundles.Animais.Entity
         public virtual List<int> Fotos {
             get
             {
-                return new ServicosContext().Fotos
-                                            .Where(foto => foto.EntidadeId == this.Id && foto.EntidadeNome.Equals("Animal"))
-                                            .Select(foto => foto.Id)
-                                            .ToList();
+                return new ServicosContext()
+                    .AnimalFotos
+                    .Where(foto => foto.Animal == this.Id)
+                    .Select(foto => foto.Id)
+                    .ToList();
             }
         }
     }

@@ -35,20 +35,23 @@ namespace Servicos.Bundles.Campanhas.Entity
         public string Descricao { get; set; }
         public string Status { get; set; }
         public virtual Usuario Usuario { get; set; }
+
         public virtual float Andamento {
             get
             {
                 return (Contribuicao * 100) / Meta;
             }
         }
+
         public virtual List<int> Fotos
         {
             get
             {
-                return new ServicosContext().Fotos
-                                            .Where(foto => foto.EntidadeId == this.Id && foto.EntidadeNome.Equals("Campanha"))
-                                            .Select(foto => foto.Id)
-                                            .ToList();
+                return new ServicosContext()
+                    .CampanhaFotos
+                    .Where(foto => foto.Campanha == this.Id)
+                    .Select(foto => foto.Id)
+                    .ToList();
             }
         }
 

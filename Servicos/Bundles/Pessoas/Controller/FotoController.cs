@@ -1,5 +1,6 @@
 ﻿using Servicos.Bundles.Animais.Entity;
 using Servicos.Bundles.Core.Repository;
+using Servicos.Bundles.Core.Resource;
 using Servicos.Bundles.Pessoas.Entity;
 using Servicos.Context;
 using System;
@@ -12,55 +13,56 @@ using System.Web.Http;
 
 namespace Servicos.Bundles.Pessoas.Controller
 {
-    [Route("api/fotos")]
-    public class FotoController : ApiController
+    [RoutePrefix("api/pessoas/fotos")]
+    public class ParecerFotoController : ApiController
     {
         private readonly AbstractEntityRepository _repository;
-
-        public FotoController()
+        
+        public ParecerFotoController()
         {            
             _repository = new AbstractEntityRepository(new ServicosContext());
         }
         
         [HttpGet]
-        [Route("api/fotos/{id}")]
+        [Route("{id}")]
         public HttpResponseMessage GetOne(int id)
         {
-            Foto foto = _repository.GetOne<Foto>(id);
+            PessoaFoto foto = _repository.GetOne<PessoaFoto>(id);
             if (!foto.Ativo || foto == null)
                 return Request.CreateResponse(HttpStatusCode.NotFound);
 
             HttpResponseMessage response = new HttpResponseMessage();
             response.Content = new ByteArrayContent(foto.Bytes);
             response.Content.LoadIntoBufferAsync(foto.Bytes.Length).Wait();
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue(foto.Tipo);
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue(foto.MimeType);
             return response;
         }
 
         [HttpPost]
         public HttpResponseMessage UploadImage()
         {
-            var files = HttpContext.Current.Request.Files;            
-            if (files.Count == 0)
-                return Request.CreateResponse(HttpStatusCode.NoContent, "Nenhum arquivo foi enviado");            
-            int entidadeId = Int32.Parse(HttpContext.Current.Request.Params["EntidadeId"].ToString());
-            string entidadeNome = HttpContext.Current.Request.Params["EntidadeNome"];            
-            for (int i = 0; i < files.Count; i++)
-            {                
+            HttpFileCollection files = HttpContext.Current.Request.Files;
+            int pessoa = Int32.Parse(HttpContext.Current.Request.Params["EntidadeId"].ToString());
+            foreach(HttpPostedFile file in files)
+            {
                 MemoryStream ms = new MemoryStream();
-                files[i].InputStream.CopyTo(ms);
-                Foto foto = new Foto(entidadeNome, entidadeId, ms.ToArray(), files[i].ContentType);
-                _repository.Add<Foto>(foto);                
+                file.InputStream.CopyTo(ms);
+                PessoaFoto pessoaFoto = new PessoaFoto(
+                    pessoa,
+                    ms.ToArray(),
+                    file.ContentType
+                );
+                _repository.Add(pessoaFoto);
             }
             _repository.Commit();
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
         [HttpDelete]
-        [Route("api/fotos/{id}")]
+        [Route("{id}")]
         public void Delete(int id)
         {
-            _repository.Remove<Foto>(id);
+            _repository.Remove<PessoaFoto>(id);
             _repository.Commit();
         }
     }

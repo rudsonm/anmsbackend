@@ -24,7 +24,7 @@ namespace Servicos.Context
         public IDbSet<Endereco> Enderecos { get; set; }
         public IDbSet<Estado> Estados { get; set; }
         public IDbSet<Fornecedor> Fornecedores { get; set; }
-        public IDbSet<Foto> Fotos { get; set; }
+        public IDbSet<PessoaFoto> PessoaFotos { get; set; }
         public IDbSet<Pais> Paises { get; set; }
         public IDbSet<Pessoa> Pessoas { get; set; }
         public IDbSet<Telefone> Telefones { get; set; }
@@ -35,10 +35,13 @@ namespace Servicos.Context
         public IDbSet<Doacao> Doacoes { get; set; }
         public IDbSet<Comentario> Comentarios { get; set; }
         public IDbSet<SolicitacaoAdocao> SolicitacoesAdocao { get; set; }
+        public IDbSet<AnimalFoto> AnimalFotos { get; set; }
 
         /* Campanha Bundle */
         public IDbSet<Campanha> Campanhas { get; set; }
         public IDbSet<Colaboracao> Colaboracoes { get; set; }
         public IDbSet<Parecer> Pareceres { get; set; }
+        public IDbSet<ParecerFoto> ParecerFotos { get; set; }
+        public IDbSet<CampanhaFoto> CampanhaFotos { get; set; }
     }
 }

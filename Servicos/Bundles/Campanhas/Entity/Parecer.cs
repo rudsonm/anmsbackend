@@ -13,10 +13,10 @@ namespace Servicos.Bundles.Campanhas.Entity
         {
             get
             {
-                return new ServicosContext().Fotos
-                                            .Where(foto => foto.EntidadeId == this.Id && foto.EntidadeNome.Equals("Parecer"))
-                                            .Select(foto => foto.Id)
-                                            .ToList();
+                return new ServicosContext()
+                    .ParecerFotos.Where(foto => foto.Parecer == this.Id)
+                    .Select(foto => foto.Id)
+                    .ToList();
             }
         }
     }

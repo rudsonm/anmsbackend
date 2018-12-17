@@ -37,6 +37,7 @@ namespace Servicos.Bundles.Animais.Resource
                             .Where(p => !p.Status.Equals("SELECIONADO"))
                             .Select(c => c.Email)
                             .ToList();
+
             switch (doacao.Status)
             {
                 case "CANCELADO":
